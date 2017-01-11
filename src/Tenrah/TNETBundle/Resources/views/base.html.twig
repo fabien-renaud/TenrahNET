@@ -1,0 +1,26 @@
+{# src/OC/PlatformBundle/Resources/views/core.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}TenrahNET{% endblock %}</title>
+    {% stylesheets output="css/compiled/main.css" filter="cssrewrite"
+    'assets/vendor/bootstrap/dist/css/bootstrap.min.css'
+    '@TenrahTNETBundle/Resources/assets/css/main.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+</head>
+<body>
+
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+
+{% javascripts output="js/compiled/core.js"
+  'assets/vendor/jquery/dist/jquery.min.js'
+  'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
+  '@TenrahTNETBundle/Resources/assets/js/core.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+</body>
+</html>

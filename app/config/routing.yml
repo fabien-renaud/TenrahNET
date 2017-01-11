@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+tenrah_tnet:
+    resource: "@TenrahTNETBundle/Controller"
     type:     annotation
+    prefix:   /
