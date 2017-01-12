@@ -1,0 +1,16 @@
+{# src/Tenrah/TNETBundle/Resources/views/irc/index.html.twig #}
+
+{% extends "TenrahTNETBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} | Index{% endblock %}
+{% block body %}
+    <div class="tn-container">
+        <h1>IRC</h1>
+    </div>
+    <div class="row row-index">
+        <a href="{{ path('tenrahnet_homepage') }}" class="link-unstlyed">
+            <button class="btn btn-index" id="btn-home">
+                <span class="glyphicon glyphicon-leaf btn-index-icon"></span></br>home
+            </button></a>
+    </div>
+{% endblock %}

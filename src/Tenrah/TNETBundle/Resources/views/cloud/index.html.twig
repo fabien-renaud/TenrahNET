@@ -1,0 +1,16 @@
+{# src/Tenrah/TNETBundle/Resources/views/bookmarks/index.html.twig #}
+
+{% extends "TenrahTNETBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} | Cloud{% endblock %}
+{% block body %}
+    <div class="tn-container">
+        <h1>Cloud</h1>
+    </div>
+    <div class="row row-index">
+        <a href="{{ path('tenrahnet_homepage') }}" class="link-unstlyed">
+            <button class="btn btn-index" id="btn-home">
+                <span class="glyphicon glyphicon-star btn-index-icon"></span></br>home
+            </button></a>
+    </div>
+{% endblock %}

@@ -6,13 +6,22 @@
     <title>{% block title %}TenrahNET{% endblock %}</title>
     {% stylesheets output="css/compiled/main.css" filter="cssrewrite"
     'assets/vendor/bootstrap/dist/css/bootstrap.min.css'
-    '@TenrahTNETBundle/Resources/assets/css/main.css' %}
+    '@TenrahTNETBundle/Resources/assets/css/main.css'
+    '@TenrahTNETBundle/Resources/assets/css/fonts.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 </head>
 <body>
-
-<div class="container">
+<header>
+    <div id="header-left">
+        <a href="{{ path('tenrahnet_homepage') }}" class="header-item link-unstlyed">TENRAH|NET</a>
+    </div>
+    <div id="header-right">
+        <a class="header-item link-unstlyed">USER</a>
+        <a class="header-item link-unstlyed">DECONNEXION</a>
+    </div>
+</header>
+<div id="tn-body" class="container">
     {% block body %}{% endblock %}
 </div>
 

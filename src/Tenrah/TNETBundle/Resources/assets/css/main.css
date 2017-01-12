@@ -1,3 +1,88 @@
+/* GLOBAL STYLE */
+
+.link-unstlyed, .link-unstlyed:focus, .link-unstlyed:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* BODY STYLE */
+
 body {
-    background: black;
+    background: #36393E;
+    color: #fff;
+}
+
+#tn-body {
+}
+
+/* HEADER STYLE */
+
+header {
+    position: static;
+    background: #fff;
+    height: 60px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#header-left, #header-right {
+    display: flex;
+}
+
+#header-left {
+    float: left;
+}
+
+#header-right {
+    float: right;
+}
+
+.header-item {
+    display: inline-block;
+    font-family:'Evogria';
+    color: #66cccc;
+    font-size: 1.5em;
+    line-height: 60px;
+    padding: 0 30px;
+}
+
+.header-item:hover {
+    color: #fff;
+    background: #66cccc;
+}
+
+/* INDEX STYLE */
+
+#tn-body h1 {
+    text-align: center;
+    margin: 80px 0 100px 0;
+}
+
+.row-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+}
+
+.div-index {
+    text-align: center;
+    width: 180px;
+}
+
+.btn-index, .btn-index:focus, .btn-index:hover {
+    background: #24272B;
+    color: white;
+    font-size: 2.1em;
+    height: 150px;
+    width: 150px;
+    border-radius: 0 20px;
+}
+
+.btn-index:hover {
+    border: 2px groove #66cccc;
+}
+
+.btn-index-icon, .btn-index-icon:hover {
+    font-size: 2.1em;
 }

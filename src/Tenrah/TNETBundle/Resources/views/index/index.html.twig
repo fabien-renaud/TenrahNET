@@ -4,5 +4,27 @@
 
 {% block title %}{{ parent() }} | Index{% endblock %}
 {% block body %}
-    Coucou
+    <h1>Welcome to TenrahNET</h1>
+    <div class="row row-index">
+        <div class="div-index">
+            <a href="{{ path('tenrahnet_cloud') }}" class="link-unstlyed">
+                <button class="btn btn-index" id="btn-cloud">
+                    <span class="glyphicon glyphicon-cloud btn-index-icon"></span></br>cloud</button></a>
+        </div>
+        <div class="div-index">
+            <a href="{{ path('tenrahnet_irc') }}" class="link-unstlyed">
+                <button class="btn btn-index" id="btn-irc">
+                    <span class="glyphicon glyphicon-leaf btn-index-icon"></span></br>IRC</button></a>
+        </div>
+        <div class="div-index">
+            <a href="{{ path('tenrahnet_draw') }}" class="link-unstlyed">
+                <button class="btn btn-index" id="btn-draw">
+                    <span class="glyphicon glyphicon-pencil btn-index-icon"></span></br>draw</button></a>
+        </div>
+        <div class="div-index">
+            <a href="{{ path('tenrahnet_bookmarks') }}" class="link-unstlyed">
+                <button class="btn btn-index" id="btn-bookmark">
+                    <span class="glyphicon glyphicon-star btn-index-icon"></span></br>favoris</button></a>
+        </div>
+    </div>
 {% endblock %}
