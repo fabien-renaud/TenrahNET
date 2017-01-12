@@ -17,8 +17,12 @@
         <a href="{{ path('tenrahnet_homepage') }}" class="header-item link-unstlyed">TENRAH|NET</a>
     </div>
     <div id="header-right">
-        <a class="header-item link-unstlyed">USER</a>
-        <a class="header-item link-unstlyed">DECONNEXION</a>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <a href="{{ path('fos_user_profile_show') }}" class="header-item link-unstlyed">USER</a>
+            <a href="{{ path('fos_user_security_logout') }}" class="header-item link-unstlyed">DECONNEXION</a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}" class="header-item link-unstlyed">Connexion</a>
+        {% endif %}
     </div>
 </header>
 <div id="tn-body" class="container">

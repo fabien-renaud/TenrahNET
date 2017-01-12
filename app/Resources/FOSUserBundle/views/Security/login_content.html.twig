@@ -1,0 +1,33 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <h1>TenrahNET</h1>
+    <div class="div-center">
+        <p style="margin-top: 50px;">You shall not pass</p>
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+
+            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Pseudo" /></br>
+            <input type="password" id="password" name="_password" required="required" placeholder="Mot de passe" /></br>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">Se souvenir de moi</label></br>
+            <input type="submit" id="_submit" name="_submit" value="Connexion" />
+        </form>
+    </div>
+</form>

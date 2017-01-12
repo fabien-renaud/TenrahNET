@@ -1,0 +1,4 @@
+services:
+#    tenrah_user.example:
+#        class: Tenrah\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
