@@ -1,5 +1,11 @@
 /* GLOBAL STYLE */
 
+h1 {
+    font-family:'Evogria';
+    color: #87bf76;
+    font-size: 4em;
+}
+
 .link-unstlyed, .link-unstlyed:focus, .link-unstlyed:hover {
     color: inherit;
     text-decoration: inherit;
@@ -54,6 +60,31 @@ header {
     background: #87bf76;
 }
 
+/* LOGIN STYLE */
+
+#username, #password, #_submit {
+    background: #24272B;
+    padding-left: 15px;
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+#username {
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 1px;
+}
+
+#password {
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 10px;
+}
+
+#_submit {
+    border-radius: 5px;
+    background: #3e434a;
+}
+
 /* INDEX STYLE */
 
 #tn-body h1 {
@@ -91,27 +122,118 @@ header {
     font-size: 2.1em;
 }
 
-/* LOGIN STYLE */
+/* PLAY STYLE */
 
-#username, #password, #_submit {
-    background: #24272B;
-    padding-left: 15px;
-    border: none;
-    height: 40px;
-    width: 300px;
+#play {
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #1c1e22;
 }
 
-#username {
-    border-radius: 5px 5px 0 0;
-    margin-bottom: 1px;
+#pl-appBar {
+    height: 100%;
+    width: 50px;
+    background: #282b30;
+    border-right: 1px solid #1c1e22;
 }
 
-#password {
-    border-radius: 0 0 5px 5px;
-    margin-bottom: 10px;
+.pl-app {
+    height: 50px;
+    width: 50px;
+    background: #1c1e22;
+    border: 1px solid #282b30;
+    border-radius: 9px;
+    font-family:'Evogria';
+    font-size: 1.2em;
+    line-height: 50px;
+    color: #87bf76;
+    transition: border-radius 0.1s ease-in-out, background 0.2s ease-in-out;
 }
 
-#_submit {
+.pl-app:hover {
+    background: #87bf76;
+    color: #fff;
+    border-right: 2px solid #fff;
     border-radius: 5px;
-    background: #3e434a;
+}
+
+.pl-appActive {
+    border-right: 2px solid #87bf76 !important;
+    border-radius: 5px;
+}
+
+#pl-container {
+    height: 100%;
+    width: calc(100% - 400px);
+}
+
+#irc-chan-title {
+    height: 50px;
+    width: 100%;
+    padding-left: 12px;
+    text-align: left;
+    font-size: 1.7em;
+    line-height: 50px;
+}
+
+#pl-chatTab {
+    height: 100%;
+    width: 350px;
+    border-left: 1px solid #1c1e22;
+    background: #282b30;
+}
+
+#pl-chatLog {
+    height: calc(100% - 120px);
+    width: 100%;
+    border-bottom: 1px solid #1c1e22;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.pl-message, .pl-welcome {
+    display: inline-block;
+    width: 100%;
+    padding: 0 8px;
+    text-align: left;
+}
+
+.pl-message:hover, .pl-welcome:hover {
+    background: #1c1e22;
+}
+
+.pl-welcome {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #A2A2A2;
+}
+
+.pl-messageDate {
+    font-size: 0.9em;
+    color: #A2A2A2;
+}
+
+.pl-messageUser {
+    font-size: 1.1em;
+    color: #87bf76;
+}
+
+.pl-messageText {
+    font-size: 1.1em;
+    color: #fff;
+}
+
+#pl-textarea {
+    height: 60px;
+    width: 100%;
+    padding: 5px 10px;
+    background: #1c1e22;
+    color: #A2A2A2;
+    font-size: 1.1em;
+    line-height: 20px;
+    border: 0;
+    vertical-align: middle;
+    overflow: hidden;
 }

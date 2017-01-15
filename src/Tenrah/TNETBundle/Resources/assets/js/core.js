@@ -1,4 +1,40 @@
 var core = {
+    IRC: function() {
+        if($('#play')) {
+            var user = $('#play').data("user");
+            var chatLog = $('#pl-chatLog');
+            var tArea = $('#pl-textarea');
+            var socket = io.connect('http://localhost:7080');
+            socket.emit('newUser', user);
+
+            socket.on('message', function(message) {
+                var isToLastMessage = false;
+                if(chatLog[0].scrollHeight - chatLog.height() == chatLog.scrollTop()) {
+                    isToLastMessage = true;
+                }
+
+                chatLog.append(
+                    '<div class="pl-message"><span class="pl-messageDate">' + message['date'] +
+                    '</span> <span class="pl-messageUser">' + message['user'] +
+                    '</span><span class="pl-messageText">: ' + message['message'] + '</span></div>');
+                if(isToLastMessage == true) {
+                    chatLog.scrollTop(chatLog.height());
+                }
+            });
+
+            tArea.keydown(function(e) {
+                if(e.keyCode == 13 && !e.shiftKey) {
+                    e.preventDefault();
+                    var message = tArea.val();
+                    tArea.val(null);
+                    if(message != "") {
+                        socket.emit('message', {'user': user, 'message': message});
+                    }
+                }
+            });
+        }
+    },
+
     buttonAnimate: function() {
         var btnHome = $('#btn-home');
         var btnCloud = $('#btn-cloud');
@@ -30,6 +66,7 @@ var core = {
     },
 
     init: function() {
+        core.IRC();
         core.buttonAnimate();
     }
 };

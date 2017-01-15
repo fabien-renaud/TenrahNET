@@ -5,13 +5,13 @@ namespace Tenrah\TNETBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class IRCController extends Controller
+class PlayController extends Controller
 {
     /**
-     * @Route("/irc", name="tenrahnet_irc")
+     * @Route("/play", name="tenrahnet_play")
      */
     public function indexAction()
     {
-        return $this->render('TenrahTNETBundle:irc:index.html.twig');
+        return $this->render('TenrahTNETBundle:play:index.html.twig');
     }
 }

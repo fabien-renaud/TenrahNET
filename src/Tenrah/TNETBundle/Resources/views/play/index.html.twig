@@ -1,0 +1,26 @@
+{# src/Tenrah/TNETBundle/Resources/views/irc/index.html.twig #}
+
+{% extends "TenrahTNETBundle::base.html.twig" %}
+
+{% block title %}{{ parent() }} | Play{% endblock %}
+{% block body %}
+    <div id="play" data-user="{{ app.user }}">
+        <div id="pl-appBar">
+            <div class="pl-app pl-appActive">A</div>
+            <div class="pl-app">B</div>
+            <div class="pl-app">C</div>
+            <div class="pl-app">D</div>
+            <div class="pl-app">E</div>
+            <div class="pl-app">F</div>
+        </div>
+        <div id="pl-container">
+        </div>
+        <div id="pl-chatTab">
+            <div id="pl-chatLog">
+                <span class="pl-welcome">Welcome to #Channel ! Please respect the rules and blablabla and blablabla...</<welcome>
+            </div>
+            <textarea id="pl-textarea" placeholder="message..."></textarea>
+        </div>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    </div>
+{% endblock %}
