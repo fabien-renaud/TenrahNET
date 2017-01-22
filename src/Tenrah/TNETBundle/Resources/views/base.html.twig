@@ -6,8 +6,8 @@
     <title>{% block title %}TenrahNET{% endblock %}</title>
     {% stylesheets output="css/compiled/main.css" filter="cssrewrite"
     'assets/vendor/bootstrap/dist/css/bootstrap.min.css'
-    '@TenrahTNETBundle/Resources/assets/css/main.css'
-    '@TenrahTNETBundle/Resources/assets/css/fonts.css' %}
+    'bundles/tenrahtnet/css/main.css'
+    'bundles/tenrahtnet/css/fonts.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 </head>
@@ -30,11 +30,13 @@
     {% block body %}{% endblock %}
 </div>
 
-{% javascripts output="js/compiled/core.js"
-  'assets/vendor/jquery/dist/jquery.min.js'
-  'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
-  '@TenrahTNETBundle/Resources/assets/js/core.js' %}
-<script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
+{% block javascripts %}
+    {% javascripts output="js/compiled/core.js"
+      'assets/vendor/jquery/dist/jquery.min.js'
+      'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
+      'bundles/tenrahtnet/js/core.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 </body>
 </html>

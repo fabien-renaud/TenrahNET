@@ -9,6 +9,26 @@ h1 {
 .link-unstlyed, .link-unstlyed:focus, .link-unstlyed:hover {
     color: inherit;
     text-decoration: inherit;
+    outline: none;
+}
+
+.row-grew {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+}
+
+.div-grew {
+    text-align: center;
+    width: 180px;
+}
+
+.btn-grew, .btn-grew:focus, .btn-grew:hover {
+    font-size: 2.1em;
+    height: 150px;
+    width: 150px;
+    outline: 0;
 }
 
 /* BODY STYLE */
@@ -91,24 +111,13 @@ header {
     margin: 80px 0 100px 0;
 }
 
-.row-index {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 180px;
-}
-
-.div-index {
-    text-align: center;
-    width: 180px;
+.btn-grew-icon, .btn-grew-icon:hover {
+    font-size: 2.1em;
 }
 
 .btn-index, .btn-index:focus, .btn-index:hover {
     background: #24272B;
     color: white;
-    font-size: 2.1em;
-    height: 150px;
-    width: 150px;
     border-radius: 0 20px;
     transition: color 0.2s ease-in-out;
 }
@@ -116,10 +125,6 @@ header {
 .btn-index:hover {
     border: 2px groove #87bf76;
     color: #87bf76;
-}
-
-.btn-index-icon, .btn-index-icon:hover {
-    font-size: 2.1em;
 }
 
 /* PLAY STYLE */
@@ -139,7 +144,8 @@ header {
     border-right: 1px solid #1c1e22;
 }
 
-.pl-app {
+.pl-app-ln {
+    display: inline-block;
     height: 50px;
     width: 50px;
     background: #1c1e22;
@@ -149,14 +155,17 @@ header {
     font-size: 1.2em;
     line-height: 50px;
     color: #87bf76;
+    outline: 0;
+    text-decoration: inherit;
     transition: border-radius 0.1s ease-in-out, background 0.2s ease-in-out;
 }
 
-.pl-app:hover {
+.pl-app-ln:hover {
     background: #87bf76;
     color: #fff;
     border-right: 2px solid #fff;
     border-radius: 5px;
+    text-decoration: inherit;
 }
 
 .pl-appActive {
@@ -165,18 +174,52 @@ header {
 }
 
 #pl-container {
-    height: 100%;
+    height: calc(100% - 60px);
     width: calc(100% - 400px);
+    padding-top: 60px;
 }
 
-#irc-chan-title {
-    height: 50px;
-    width: 100%;
-    padding-left: 12px;
-    text-align: left;
-    font-size: 1.7em;
-    line-height: 50px;
+/* PLAY APP STYLE */
+
+.pl-app-title {
+    font-family:'Evogria';
+    font-size: 4em;
+    color: #A2A2A2;
 }
+
+#blewUp {
+    color: #C95252;
+}
+
+#pl-app-description {
+    font-family:'Evogria';
+    color: #A2A2A2;
+    font-size: 2.5em;
+}
+
+#pl-app-select {
+    margin-top: 60px;
+}
+
+.btn-app {
+    background: #24272B;
+    color: white;
+    font-family:'Evogria';
+    border-radius: 20px;
+}
+
+#pl-app-join {
+    background: #C95252;
+    color: #892F2F;
+    border: 1px solid #892F2F;
+}
+
+#pl-app-create {
+    background: #E4DBB2;
+    color: #A49865;
+}
+
+/* PLAY CHAT STYLE */
 
 #pl-chatTab {
     height: 100%;
@@ -193,19 +236,24 @@ header {
     word-wrap: break-word;
 }
 
-.pl-message, .pl-welcome {
+.pl-message, .pl-welcome, .pl-newUser {
     display: inline-block;
     width: 100%;
     padding: 0 8px;
     text-align: left;
 }
 
-.pl-message:hover, .pl-welcome:hover {
+.pl-message:hover, .pl-welcome:hover, .pl-newUser:hover {
     background: #1c1e22;
 }
 
 .pl-welcome {
     margin: 10px 0;
+    font-size: 1.1em;
+    color: #A2A2A2;
+}
+
+.pl-newUser {
     font-size: 1.1em;
     color: #A2A2A2;
 }

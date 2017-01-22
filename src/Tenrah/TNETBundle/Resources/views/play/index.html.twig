@@ -6,21 +6,28 @@
 {% block body %}
     <div id="play" data-user="{{ app.user }}">
         <div id="pl-appBar">
-            <div class="pl-app pl-appActive">A</div>
-            <div class="pl-app">B</div>
-            <div class="pl-app">C</div>
-            <div class="pl-app">D</div>
-            <div class="pl-app">E</div>
-            <div class="pl-app">F</div>
+            <button type="button" class="pl-app-ln pl-appActive" data-app="Cl">Cl</button>
+            <button type="button" class="pl-app-ln" data-app="B">B</button>
+            <button type="button" class="pl-app-ln" data-app="C">C</button>
+            <button type="button" class="pl-app-ln" data-app="D">D</button>
+            <button type="button" class="pl-app-ln" data-app="E">E</button>
+            <button type="button" class="pl-app-ln" data-app="F">F</button>
         </div>
         <div id="pl-container">
+            {% include "TenrahTNETBundle:play:play_homepage.html.twig" %}
         </div>
         <div id="pl-chatTab">
             <div id="pl-chatLog">
-                <span class="pl-welcome">Welcome to #Channel ! Please respect the rules and blablabla and blablabla...</<welcome>
+                <span class="pl-welcome">Welcome to #Channel ! Please respect the rules and blablabla and blablabla...</span>
             </div>
             <textarea id="pl-textarea" placeholder="message..."></textarea>
         </div>
-        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts 'bundles/tenrahtnet/js/play.js' %}
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
